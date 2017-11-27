@@ -56,10 +56,10 @@ try{
     // $update->execute();
 
     //table delete tool
-    //$db->exec("DROP TABLE [table]");
+    //$db->exec("DROP TABLE budgets");
 
     //row delete tool
-    //$db->exec("DELETE FROM [table] WHERE email = [value]);
+    //$db->exec("DELETE FROM users WHERE email = 'melanie.s.reeder@gmail.com'");
 
     //queries
     $tables = $db->query("SELECT * FROM sqlite_master where type='table';");
@@ -134,6 +134,8 @@ catch(PDOException $e){
                             echo "</tr>";
                         }
                         $firstrow = false;
+                        unset($columns);
+                        unset($cellvalues);
                     }
                 ?>
                     </tbody>
