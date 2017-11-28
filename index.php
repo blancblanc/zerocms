@@ -9,7 +9,6 @@ echo $request_uri[0] . "<br>";
 var_dump($request_uri);
 echo "<br>";
 
-
 //looks like this isn't working right in valet...
 $baseurl  = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
 $baseurl .= $_SERVER['SERVER_NAME'];

@@ -14,7 +14,6 @@ $cleanuri = explode('?', $_SERVER['REQUEST_URI'], 2);
 $baseurl .= htmlspecialchars($cleanuri[0]);
 
 try{
-
     //postgres for prod
     $db = new PDO($dsn);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -24,7 +23,7 @@ try{
     //$db->exec("DELETE FROM [table] WHERE [col] = [val]");
 
     //table create tool
-    //$db->exec("CREATE TABLE IF NOT EXISTS [table] (email TEXT PRIMARY KEY, password TEXT, fname TEXT, lname TEXT, admin BOOLEAN)");
+    //$db->exec("CREATE TABLE IF NOT EXISTS users (email TEXT PRIMARY KEY, password TEXT, fname TEXT, lname TEXT, admin BOOLEAN)");
 
     //add row tool
     // $input_email = "jlatimer@bna.com";
@@ -40,13 +39,12 @@ try{
     // $password_store = password_hash($input_password, PASSWORD_BCRYPT);
     // $input_fname = "Tim";
     // $input_lname = "Reeder";
-    // $input_cms = 1;
     // $input_admin = 1;
 
     //FYI $checkpass = password_verify($inputpass, $storedpass) yields t or f for pw check
 
-    // $insert = $db->prepare("INSERT INTO [table] (email, password, fname, lname, cms, admin) VALUES (?, ?, ?, ?, ?, ?)");
-    // $insertarray = array($input_email, $password_store, $input_fname, $input_lname, $input_cms, $input_admin);
+    // $insert = $db->prepare("INSERT INTO users (email, password, fname, lname, admin) VALUES (?, ?, ?, ?, ?)");
+    // $insertarray = array($input_email, $password_store, $input_fname, $input_lname, $input_admin);
     // $insert->execute($insertarray); 
 
     //update row tool
@@ -56,7 +54,7 @@ try{
     // $update->execute();
 
     //table delete tool
-    //$db->exec("DROP TABLE budgets");
+    //$db->exec("DROP TABLE users");
 
     //row delete tool
     //$db->exec("DELETE FROM users WHERE email = 'melanie.s.reeder@gmail.com'");

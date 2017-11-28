@@ -12,7 +12,7 @@ $localips = array(
 //You may need to add your projects directory to the path to the database.
 if(in_array($_SERVER['REMOTE_ADDR'], $localips)){
 	//add your projects directory name here...
-	$projectdirectory = "zerocms";
+	$projectdirectory = "zero";
 	$dbrelativepath = "/".$projectdirectory."/system/data/database.sqlite";
 }
 else{
